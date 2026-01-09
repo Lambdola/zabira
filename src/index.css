@@ -2,8 +2,7 @@
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+
   color-scheme: light dark;
   /* color: #ffffffde; */
   background-color: #ffffff;
@@ -13,3 +12,64 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* .active-tab {
+  background-image: linear-gradient(to right, red 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: fill 2s linear forwards;
+}
+
+@keyframes fill {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+} */
+.active_tab {
+  position: relative;
+  background-color: #52525b;
+  overflow: hidden;
+}
+
+.active_tab::after {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  content: " ";
+  animation: fill 4.1s linear;
+}
+
+.dormant_tab {
+  background-color: #52525b;
+}
+
+.fade_In {
+  animation: fadeIn .5s linear;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
